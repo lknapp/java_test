@@ -1,11 +1,8 @@
-pipeline {
-    agent any
-    stages {
-		stage('Checkout'){
-			checkout scm
-		}
-		stage('Test') {
-			sh 'gradle test'
-		}
-    }
+node('node') {
+	stage('Checkout'){
+		checkout scm
+	}
+	stage('Test') {
+		sh 'gradle test'
+	}
 }
